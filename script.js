@@ -29,6 +29,8 @@ Particle.prototype.update = function() {
     if (this.y + this.size > canvas.height || this.y - this.size < 0) {
         this.directionY = -this.directionY;
     }
+    this.x += this.directionX;
+    this.y += this.directionY;
     this.draw();
 };
 
@@ -38,8 +40,8 @@ function init() {
         let size = Math.random() * 20;
         let x = Math.random() * (innerWidth - size * 2);
         let y = Math.random() * (innerHeight - size * 2);
-        let directionX = Math.random() * 0.4 - 0.2;
-        let directionY = Math.random() * 0.4 - 0.2;
+        let directionX = Math.random() * 0.8 - 0.4;
+        let directionY = Math.random() * 0.8 - 0.4;
         let color = "white";
 
         particleArray.push(
